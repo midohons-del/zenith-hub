@@ -1,0 +1,487 @@
+1:"$Sreact.fragment"
+3:I[8001,["1","static/chunks/1-789482bab962acfc.js","498","static/chunks/app/games/%5Bslug%5D/page-f8dcbb9cecb59456.js"],""]
+4:I[3632,[],""]
+5:I[4998,[],""]
+7:I[3089,[],"OutletBoundary"]
+9:I[3089,[],"MetadataBoundary"]
+b:I[3089,[],"ViewportBoundary"]
+d:I[1423,[],""]
+:HL["/_next/static/css/3c490c6f55696c3c.css","style"]
+2:T3918,
+/* ---- Print-shop atmosphere: faint column rules + paper grain ------------ */
+.z-atmos {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg);
+}
+.z-atmos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--text) 5%, transparent) 0,
+    color-mix(in srgb, var(--text) 5%, transparent) 1px,
+    transparent 1px,
+    transparent max(6.5vw, 92px)
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+  opacity: 0.7;
+}
+.z-atmos::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Measure / containers ----------------------------------------------- */
+.z-wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+.z-measure { max-width: 68ch; }
+.z-measure-tight { max-width: 34rem; }
+
+/* ---- Rules / dividers ---------------------------------------------------- */
+.z-hr { height: 1px; border: 0; background: color-mix(in srgb, var(--text) 24%, transparent); }
+.z-hr-soft { height: 1px; border: 0; background: color-mix(in srgb, var(--text) 12%, transparent); }
+.z-hr-ink { height: 2px; border: 0; background: var(--text); }
+.z-hr-red { height: 2px; border: 0; background: var(--primary); }
+.z-doublerule {
+  border-top: 3px solid var(--text);
+  border-bottom: 1px solid var(--text);
+  padding-block: 0.7rem;
+}
+
+/* ---- Meta / eyebrows / tags --------------------------------------------- */
+.z-eyebrow {
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.z-meta {
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.z-sc { font-variant: small-caps; letter-spacing: 0.06em; }
+.z-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.z-tag::before {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: var(--primary);
+}
+
+/* ---- Display typography -------------------------------------------------- */
+.z-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.z-italic { font-style: italic; }
+.z-red { color: var(--primary); }
+.z-headline {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 560;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  transition: color 0.35s ease;
+}
+
+/* ---- Oversized section numerals ----------------------------------------- */
+.z-numeral {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  line-height: 0.72;
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--primary) 26%, transparent);
+  font-variant-numeric: lining-nums;
+}
+.z-numeral-ink { color: color-mix(in srgb, var(--text) 18%, transparent); }
+
+/* ---- Links & buttons ----------------------------------------------------- */
+.z-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.3rem;
+  transition: gap 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.z-link:hover { gap: 0.85rem; color: var(--primary); }
+.z-link .z-arrow { transition: transform 0.3s ease; }
+.z-link:hover .z-arrow { transform: translateX(3px); }
+
+.z-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text);
+  border: 1.5px solid var(--text);
+  padding: 0.85rem 1.5rem;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.z-btn:hover { background: var(--text); color: var(--bg); }
+.z-btn-red { border-color: var(--primary); color: var(--primary); }
+.z-btn-red:hover { background: var(--primary); color: var(--bg); }
+.z-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+.z-btn[disabled]:hover { background: transparent; color: var(--text); }
+
+/* ---- Masthead / navigation ---------------------------------------------- */
+.z-masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 22%, transparent);
+}
+.z-wordmark {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+.z-navlink {
+  position: relative;
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--text) 72%, transparent);
+  padding-block: 0.2rem;
+  transition: color 0.3s ease;
+}
+.z-navlink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.z-navlink:hover { color: var(--text); }
+.z-navlink:hover::after { transform: scaleX(1); }
+
+/* CSS-only mobile menu (checkbox hack, static-export safe) */
+.z-mtoggle { position: absolute; opacity: 0; pointer-events: none; }
+.z-mpanel {
+  display: none;
+  border-top: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
+  background: var(--bg);
+}
+.z-mtoggle:checked ~ .z-mpanel { display: block; }
+.z-burger { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; cursor: pointer; }
+.z-burger .z-x { display: none; }
+.z-mtoggle:checked ~ .z-burger .z-line { display: none; }
+.z-mtoggle:checked ~ .z-burger .z-x { display: block; }
+
+/* ---- Editorial slab (game / feature card) ------------------------------- */
+.z-slab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.4rem;
+  border-top: 1px solid color-mix(in srgb, var(--text) 24%, transparent);
+  transition: border-color 0.4s ease;
+}
+.z-slab:hover { border-top-color: var(--primary); }
+.z-slab:hover .z-headline { color: var(--primary); }
+.z-slab .z-slabhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.z-slab .z-idx {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-variant-numeric: lining-nums;
+}
+
+/* ---- Ruled index rows (departments / contents) -------------------------- */
+.z-index-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding-block: 1.35rem;
+  border-top: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+  transition: background 0.35s ease, padding-inline 0.35s ease;
+}
+.z-index-row:last-child { border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent); }
+.z-index-row:hover { background: color-mix(in srgb, var(--primary) 6%, transparent); }
+.z-index-row:hover .z-headline { color: var(--primary); }
+
+/* ---- Figure frame (placeholder game viewport) --------------------------- */
+.z-figure {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--text) 26%, transparent);
+  background: color-mix(in srgb, var(--surface) 70%, var(--bg));
+  padding: 0.9rem;
+}
+.z-figure-corners::before,
+.z-figure-corners::after {
+  content: '';
+  position: absolute;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1.5px solid var(--primary);
+}
+.z-figure-corners::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.z-figure-corners::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+.z-figcaption {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.z-figcaption b { color: var(--text); font-weight: 600; }
+
+/* ---- Monogram (image-free game art) ------------------------------------- */
+.z-monogram {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(45deg,
+      color-mix(in srgb, var(--text) 6%, transparent) 0,
+      color-mix(in srgb, var(--text) 6%, transparent) 1px,
+      transparent 1px, transparent 9px),
+    color-mix(in srgb, var(--surface) 80%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
+}
+.z-monogram-letter {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(3rem, 12vw, 6rem);
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+/* ---- Pull quote ---------------------------------------------------------- */
+.z-pullquote {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  border-left: 3px solid var(--primary);
+  padding-left: clamp(1.25rem, 3vw, 2.5rem);
+}
+.z-pullquote cite {
+  display: block;
+  margin-top: 1.25rem;
+  font-style: normal;
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* ---- Article prose (blog / long-form) ----------------------------------- */
+.z-article p {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 1.14rem;
+  line-height: 1.82;
+  color: color-mix(in srgb, var(--text) 90%, transparent);
+  margin-bottom: 1.5rem;
+  max-width: 66ch;
+}
+.z-article > p:first-of-type::first-letter {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 4.8rem;
+  line-height: 0.66;
+  float: left;
+  padding: 0.4rem 0.7rem 0 0;
+  color: var(--primary);
+}
+
+/* ---- Form fields (underline-only, subscription-card feel) --------------- */
+.z-field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--text) 30%, transparent);
+  padding: 0.7rem 0;
+  color: var(--text);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.z-field::placeholder { color: color-mix(in srgb, var(--muted) 80%, transparent); }
+.z-field:focus { outline: none; border-color: var(--primary); }
+.z-label {
+  display: block;
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Accordion (native <details>) --------------------------------------- */
+.z-acc { border-top: 1px solid color-mix(in srgb, var(--text) 20%, transparent); }
+.z-acc:last-of-type { border-bottom: 1px solid color-mix(in srgb, var(--text) 20%, transparent); }
+.z-acc summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding-block: 1.5rem;
+}
+.z-acc summary::-webkit-details-marker { display: none; }
+.z-acc summary .z-qnum {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  font-weight: 700;
+}
+.z-acc summary .z-q {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.15;
+  transition: color 0.3s ease;
+}
+.z-acc summary:hover .z-q { color: var(--primary); }
+.z-acc summary .z-plus {
+  color: var(--primary);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.z-acc[open] summary .z-plus { transform: rotate(45deg); }
+.z-acc .z-answer {
+  padding: 0 0 1.6rem 2.9rem;
+  color: var(--muted);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 62ch;
+}
+
+/* ---- Standings table (leaderboard) -------------------------------------- */
+.z-table { width: 100%; border-collapse: collapse; }
+.z-table thead th {
+  font-family: var(--font-body), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid var(--text);
+  text-align: left;
+}
+.z-table tbody td { padding: 1.05rem 1rem; border-bottom: 1px solid color-mix(in srgb, var(--text) 14%, transparent); }
+.z-table tbody tr { transition: background 0.3s ease; }
+.z-table tbody tr:hover { background: color-mix(in srgb, var(--primary) 6%, transparent); }
+.z-rank {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: lining-nums;
+}
+.z-rank-lead { color: var(--primary); }
+.z-score {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  color: var(--text);
+}
+
+/* ---- Reveal-on-scroll (progressive enhancement) ------------------------- */
+@keyframes z-rise { to { opacity: 1; transform: none; } }
+.z-rise {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: z-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.z-d1 { animation-delay: 0.06s; }
+.z-d2 { animation-delay: 0.14s; }
+.z-d3 { animation-delay: 0.22s; }
+.z-d4 { animation-delay: 0.3s; }
+.z-d5 { animation-delay: 0.38s; }
+.z-d6 { animation-delay: 0.46s; }
+@supports (animation-timeline: view()) {
+  .z-scroll {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: z-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 24%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .z-rise, .z-scroll { opacity: 1 !important; transform: none !important; animation: none !important; }
+}
+0:{"P":null,"b":"YYXIwd_8zPh76Qwr4i-xn","p":"","c":["","games","turbo-court",""],"i":false,"f":[[["",{"children":["games",{"children":[["slug","turbo-court","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3c490c6f55696c3c.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-variant":"retro","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":":root{--bg:#1e0b19;--surface:#2e1428;--primary:#e967af;--accent:#5eed9f;--text:#f6f4f5;--muted:#a66898;--font-display:\"League Spartan\";--font-body:\"Onest\";}"}}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Onest:wght@300;400;500;600;700&display=swap"}]]}],["$","body",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"className":"z-atmos","aria-hidden":true}],["$","header",null,{"className":"z-masthead","children":["$","div",null,{"className":"z-wrap","children":["$","div",null,{"className":"flex items-center justify-between gap-6 h-[72px] relative","children":[["$","$L3",null,{"href":"/","className":"flex items-baseline gap-3 min-w-0","children":[["$","span",null,{"className":"z-wordmark truncate","style":{"fontSize":"1.5rem"},"children":"Zenith Hub"}],["$","span",null,{"className":"z-meta hidden lg:inline shrink-0","children":"Vol. VIII"}]]}],["$","nav",null,{"className":"hidden md:flex items-center gap-9","children":[["$","$L3","/games/",{"href":"/games/","className":"z-navlink","children":"Games"}],["$","$L3","/categories/",{"href":"/categories/","className":"z-navlink","children":"Departments"}],["$","$L3","/blog/",{"href":"/blog/","className":"z-navlink","children":"Journal"}],["$","$L3","/leaderboard/",{"href":"/leaderboard/","className":"z-navlink","children":"Standings"}],["$","$L3","/about/",{"href":"/about/","className":"z-navlink","children":"Masthead"}]]}],["$","label",null,{"className":"md:hidden","children":[["$","input",null,{"type":"checkbox","className":"z-mtoggle","aria-label":"Toggle menu"}],["$","span",null,{"className":"z-burger","role":"button","tabIndex":0,"aria-label":"Menu","children":[["$","svg",null,{"width":22,"height":22,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"z-line","children":["$","path",null,{"d":"M4 7h16M4 12h16M4 17h16"}]}],["$","svg",null,{"width":22,"height":22,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"z-x","children":["$","path",null,{"d":"M6 6l12 12M18 6 6 18"}]}]]}],["$","div",null,{"className":"z-mpanel absolute left-0 right-0 top-[72px] z-50","children":["$","nav",null,{"className":"z-wrap flex flex-col py-2","children":[["$","$L3","/games/",{"href":"/games/","className":"py-4 z-navlink border-b border-[color-mix(in_srgb,var(--text)_12%,transparent)] last:border-none","children":"Games"}],["$","$L3","/categories/",{"href":"/categories/","className":"py-4 z-navlink border-b border-[color-mix(in_srgb,var(--text)_12%,transparent)] last:border-none","children":"Departments"}],["$","$L3","/blog/",{"href":"/blog/","className":"py-4 z-navlink border-b border-[color-mix(in_srgb,var(--text)_12%,transparent)] last:border-none","children":"Journal"}],["$","$L3","/leaderboard/",{"href":"/leaderboard/","className":"py-4 z-navlink border-b border-[color-mix(in_srgb,var(--text)_12%,transparent)] last:border-none","children":"Standings"}],["$","$L3","/about/",{"href":"/about/","className":"py-4 z-navlink border-b border-[color-mix(in_srgb,var(--text)_12%,transparent)] last:border-none","children":"Masthead"}],["$","$L3","/contact/",{"href":"/contact/","className":"py-4 z-navlink border-b border-[color-mix(in_srgb,var(--text)_12%,transparent)] last:border-none","children":"Contact"}]]}]}]]}]]}]}]}],["$","main",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","section",null,{"className":"shell min-h-[60vh] grid place-items-center py-24 text-center","children":["$","div",null,{"className":"reveal","children":[["$","p",null,{"className":"font-display text-[7rem] sm:text-[10rem] font-bold leading-none text-gradient glow","children":"404"}],["$","h1",null,{"className":"mt-2 font-display text-2xl font-semibold","children":"This screen went dark"}],["$","p",null,{"className":"mt-3 text-[var(--muted)] max-w-sm mx-auto","children":"The page you're after isn't here. Let's get you back to the games."}],["$","$L3",null,{"href":"/","className":"btn btn-primary mt-8","children":["Back to home ",["$","svg",null,{"width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}]]}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"z-wrap mt-24 sm:mt-32","children":[["$","hr",null,{"className":"z-hr-ink"}],["$","div",null,{"className":"py-14 grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]","children":[["$","div",null,{"className":"max-w-sm","children":[["$","$L3",null,{"href":"/","className":"z-wordmark inline-block","style":{"fontSize":"1.7rem"},"children":"Zenith Hub"}],["$","p",null,{"className":"mt-4 text-[var(--muted)] leading-relaxed","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"1rem"},"children":"Zenith Hub keeps the games light and the fun heavy."}],["$","a",null,{"href":"mailto:hello@zenithhub.gg","className":"mt-6 inline-block z-meta text-[var(--primary)] hover:opacity-70 transition-opacity","children":"hello@zenithhub.gg"}],["$","p",null,{"className":"mt-6 z-meta","children":["Vol. VIII"," · ","No. 05"]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"z-label mb-4","children":"The Arcade"}],["$","ul",null,{"className":"space-y-3","children":[["$","li","/games/",{"children":["$","$L3",null,{"href":"/games/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"All Games"}]}],["$","li","/categories/",{"children":["$","$L3",null,{"href":"/categories/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Departments"}]}],["$","li","/leaderboard/",{"children":["$","$L3",null,{"href":"/leaderboard/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Standings"}]}],["$","li","/blog/",{"children":["$","$L3",null,{"href":"/blog/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Journal"}]}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"z-label mb-4","children":"The Office"}],["$","ul",null,{"className":"space-y-3","children":[["$","li","/about/",{"children":["$","$L3",null,{"href":"/about/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Masthead"}]}],["$","li","/contact/",{"children":["$","$L3",null,{"href":"/contact/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Correspondence"}]}],["$","li","/faq/",{"children":["$","$L3",null,{"href":"/faq/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Queries"}]}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"z-label mb-4","children":"Notices"}],["$","ul",null,{"className":"space-y-3","children":[["$","li","/privacy/",{"children":["$","$L3",null,{"href":"/privacy/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Privacy"}]}],["$","li","/terms/",{"children":["$","$L3",null,{"href":"/terms/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Terms"}]}],["$","li","/cookies/",{"children":["$","$L3",null,{"href":"/cookies/","className":"text-[var(--muted)] hover:text-[var(--primary)] transition-colors","style":{"fontFamily":"var(--font-body), Georgia, serif","fontSize":"0.98rem"},"children":"Cookies"}]}]]}]]}]]}],["$","hr",null,{"className":"z-hr-soft"}],["$","div",null,{"className":"py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3","children":[["$","p",null,{"className":"z-meta","children":["© ",2026," ","Zenith Hub Entertainment Ltd."]}],["$","p",null,{"className":"z-meta z-sc","children":"Printed in pixels · No downloads, ever"}]]}]]}]]}]]}]]}],{"children":["games",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","games","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","turbo-court","d"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","games","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L6",null,["$","$L7",null,{"children":"$L8"}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","3PbbJNDSCLReCL0wAESAT",{"children":[["$","$L9",null,{"children":"$La"}],["$","$Lb",null,{"children":"$Lc"}],null]}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+6:[["$","header",null,{"className":"z-wrap pt-10 sm:pt-14","children":[["$","div",null,{"className":"z-doublerule flex items-center justify-between gap-4","children":[["$","span",null,{"className":"z-meta","children":"Vol. VIII"}],["$","span",null,{"className":"z-meta z-sc hidden sm:inline text-center","children":"Sports"}],["$","span",null,{"className":"z-meta","children":"No. 05"}]]}],["$","div",null,{"className":"pt-9 sm:pt-12","children":[["$","$L3",null,{"href":"/games/","className":"z-rise inline-flex items-center gap-2 z-meta mb-7 hover:text-[var(--primary)] transition-colors","children":[["$","svg",null,{"width":14,"height":14,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"rotate-180","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}],"The catalogue"]}],["$","p",null,{"className":"z-rise z-eyebrow","children":"Sports"}],["$","h1",null,{"className":"z-rise z-d1 z-display mt-5 max-w-5xl","style":{"fontSize":"clamp(2.6rem, 8vw, 5.6rem)"},"children":"Turbo Court"}],["$","p",null,{"className":"z-rise z-d2 mt-7 z-measure text-[var(--muted)]","style":{"fontSize":"1.2rem","lineHeight":1.6},"children":"Fast-break basketball where every possession is a sprint against the shot clock."}]]}],["$","hr",null,{"className":"z-hr-ink mt-10 sm:mt-14"}]]}],["$","article",null,{"className":"z-wrap py-10 sm:py-14","children":[["$","figure",null,{"className":"z-scroll","children":[["$","div",null,{"className":"z-figure z-figure-corners","children":["$","div",null,{"className":"placeholder-canvas","children":[["$","span",null,{"className":"scanline"}],["$","div",null,{"className":"relative z-10 flex flex-col items-center gap-5 px-6","children":[["$","span",null,{"className":"brand-mark w-14 h-14 rounded-2xl pulse-dot","children":["$","svg",null,{"width":22,"height":22,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","children":["$","path",null,{"d":"M6 4.5v15l13-7.5-13-7.5Z","fill":"currentColor","stroke":"none"}]}]}],["$","div",null,{"children":[["$","p",null,{"className":"font-display text-lg sm:text-xl font-semibold glow","children":"Coming soon"}],["$","p",null,{"className":"mt-1 text-[0.9rem] text-[var(--muted)] max-w-xs","children":["Turbo Court"," — game loading experience in progress."]}]]}],["$","div",null,{"className":"loader-bar","children":["$","span",null,{}]}],["$","p",null,{"className":"chip","children":"Booting engine"}]]}]]}]}],["$","figcaption",null,{"className":"z-figcaption mt-3 flex items-baseline justify-between gap-4","children":[["$","span",null,{"children":[["$","b",null,{"children":["Fig. ","01"]}]," — ","Turbo Court",", preview build. Interactive experience in progress."]}],["$","span",null,{"className":"hidden sm:inline z-meta","children":"Plate"}]]}]]}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center gap-5","children":[["$","button",null,{"type":"button","className":"z-btn z-btn-red","disabled":true,"aria-disabled":true,"children":[["$","svg",null,{"width":15,"height":15,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","children":["$","path",null,{"d":"M6 4.5v15l13-7.5-13-7.5Z","fill":"currentColor","stroke":"none"}]}]," Play — coming soon"]}],["$","span",null,{"className":"z-meta","children":"Preview edition"}]]}],["$","div",null,{"className":"mt-16 grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-start","children":[["$","div",null,{"className":"z-article","children":[["$","p",null,{"className":"z-eyebrow","style":{"marginBottom":"1.5rem"},"children":"How to play"}],["$","p",null,{"children":"Move with the arrow keys and press Space to shoot or pass. Push the ball upcourt quickly — the turbo shot clock punishes any hesitation."}],["$","blockquote",null,{"className":"z-pullquote my-10","style":{"fontSize":"clamp(1.4rem, 3.2vw, 2rem)"},"children":"Simple to open, impossible to fold away — the mark of a title worth its column inches."}]]}],["$","aside",null,{"className":"lg:sticky lg:top-28","children":["$","div",null,{"className":"border-t-[3px] border-[var(--text)] pt-5","children":[["$","p",null,{"className":"z-eyebrow","children":"Specification"}],["$","dl",null,{"className":"mt-5 divide-y divide-[color-mix(in_srgb,var(--text)_14%,transparent)]","children":[["$","div","Department",{"className":"flex items-baseline justify-between gap-4 py-3.5","children":[["$","dt",null,{"className":"z-meta","children":"Department"}],["$","dd",null,{"className":"text-[var(--text)]","style":{"fontFamily":"var(--font-display), Georgia, serif","fontWeight":500,"fontSize":"1.05rem"},"children":"Sports"}]]}],["$","div","Platform",{"className":"flex items-baseline justify-between gap-4 py-3.5","children":[["$","dt",null,{"className":"z-meta","children":"Platform"}],["$","dd",null,{"className":"text-[var(--text)]","style":{"fontFamily":"var(--font-display), Georgia, serif","fontWeight":500,"fontSize":"1.05rem"},"children":"Browser"}]]}],["$","div","Price",{"className":"flex items-baseline justify-between gap-4 py-3.5","children":[["$","dt",null,{"className":"z-meta","children":"Price"}],["$","dd",null,{"className":"text-[var(--text)]","style":{"fontFamily":"var(--font-display), Georgia, serif","fontWeight":500,"fontSize":"1.05rem"},"children":"Free"}]]}],["$","div","Install",{"className":"flex items-baseline justify-between gap-4 py-3.5","children":[["$","dt",null,{"className":"z-meta","children":"Install"}],["$","dd",null,{"className":"text-[var(--text)]","style":{"fontFamily":"var(--font-display), Georgia, serif","fontWeight":500,"fontSize":"1.05rem"},"children":"None"}]]}]]}],["$","div",null,{"className":"mt-7","children":["$","$L3",null,{"href":"/categories/sports/","className":"z-link ","children":[["More ","Sports"],["$","svg",null,{"width":15,"height":15,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"z-arrow","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}]]}]}]]}]}]]}]]}],["$","section",null,{"className":"z-wrap py-14","children":[["$","div",null,{"className":"flex items-end justify-between gap-6 flex-wrap","children":[["$","h2",null,{"className":"z-display","style":{"fontSize":"clamp(1.8rem, 4vw, 2.8rem)"},"children":"Also in this issue"}],["$","$L3",null,{"href":"/games/","className":"z-meta inline-flex items-center gap-2 hover:text-[var(--primary)] transition-colors","children":["All titles ",["$","svg",null,{"width":15,"height":15,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}]]}]]}],["$","hr",null,{"className":"z-hr-red mt-8"}],["$","div",null,{"className":"mt-12 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3","children":[["$","div","ion-perimeter",{"className":"z-scroll","children":["$","$L3",null,{"href":"/games/ion-perimeter/","className":"z-slab group","children":[false,["$","div",null,{"className":"z-slabhead","children":[["$","span",null,{"className":"z-tag","children":"Shooter"}],["$","span",null,{"className":"z-idx","children":"01"}]]}],["$","h3",null,{"className":"z-headline mt-4","style":{"fontSize":"clamp(1.5rem, 2.6vw, 2rem)"},"children":"Ion Perimeter"}],["$","p",null,{"className":"mt-3 text-[var(--muted)] leading-relaxed","style":{"fontSize":"1rem"},"children":"Hold a fragile ion perimeter against waves closing in from every side."}],["$","span",null,{"className":"mt-5 z-meta inline-flex items-center gap-2 text-[var(--primary)]","children":["Read the feature",["$","svg",null,{"width":14,"height":14,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"transition-transform group-hover:translate-x-1","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}]]}]]}]}],["$","div","factory-drift",{"className":"z-scroll","children":["$","$L3",null,{"href":"/games/factory-drift/","className":"z-slab group","children":[false,["$","div",null,{"className":"z-slabhead","children":[["$","span",null,{"className":"z-tag","children":"Idle"}],["$","span",null,{"className":"z-idx","children":"02"}]]}],["$","h3",null,{"className":"z-headline mt-4","style":{"fontSize":"clamp(1.5rem, 2.6vw, 2rem)"},"children":"Factory Drift"}],["$","p",null,{"className":"mt-3 text-[var(--muted)] leading-relaxed","style":{"fontSize":"1rem"},"children":"Automate a sprawling factory line that keeps producing goods in the background."}],["$","span",null,{"className":"mt-5 z-meta inline-flex items-center gap-2 text-[var(--primary)]","children":["Read the feature",["$","svg",null,{"width":14,"height":14,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"transition-transform group-hover:translate-x-1","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}]]}]]}]}],["$","div","dominion-wire",{"className":"z-scroll","children":["$","$L3",null,{"href":"/games/dominion-wire/","className":"z-slab group","children":[false,["$","div",null,{"className":"z-slabhead","children":[["$","span",null,{"className":"z-tag","children":"Strategy"}],["$","span",null,{"className":"z-idx","children":"03"}]]}],["$","h3",null,{"className":"z-headline mt-4","style":{"fontSize":"clamp(1.5rem, 2.6vw, 2rem)"},"children":"Dominion Wire"}],["$","p",null,{"className":"mt-3 text-[var(--muted)] leading-relaxed","style":{"fontSize":"1rem"},"children":"Wire together a network of outposts to expand your dominion one node at a time."}],["$","span",null,{"className":"mt-5 z-meta inline-flex items-center gap-2 text-[var(--primary)]","children":["Read the feature",["$","svg",null,{"width":14,"height":14,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1.7,"strokeLinecap":"round","strokeLinejoin":"round","className":"transition-transform group-hover:translate-x-1","children":[["$","path",null,{"d":"M5 12h14"}],["$","path",null,{"d":"m13 6 6 6-6 6"}]]}]]}]]}]}]]}]]}]]
+c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#1e0b19"}]]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Turbo Court · Zenith Hub"}],["$","meta","2",{"name":"description","content":"Fast-break basketball where every possession is a sprint against the shot clock."}],["$","meta","3",{"name":"application-name","content":"Zenith Hub"}],["$","meta","4",{"property":"og:title","content":"Zenith Hub — Zenith Hub keeps the games light and the fun heavy."}],["$","meta","5",{"property":"og:description","content":"Zenith Hub turns Puzzle, Strategy, Idle, Sports, and Shooter into a single instant-play destination. Everything runs straight in the browser, nothing asks for a download, and the only commitment is however long you decide to stay."}],["$","meta","6",{"property":"og:site_name","content":"Zenith Hub"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Zenith Hub"}],["$","meta","10",{"name":"twitter:description","content":"Zenith Hub turns Puzzle, Strategy, Idle, Sports, and Shooter into a single instant-play destination. Everything runs straight in the browser, nothing asks for a download, and the only commitment is however long you decide to stay."}]]
+8:null
